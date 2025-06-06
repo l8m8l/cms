@@ -110,7 +110,20 @@ export interface Config {
     header: HeaderSelect<false> | HeaderSelect<true>;
     footer: FooterSelect<false> | FooterSelect<true>;
   };
-  locale: null;
+  locale:
+    | 'ar-SA'
+    | 'en-GB'
+    | 'es-ES'
+    | 'fr-FR'
+    | 'id-ID'
+    | 'it-IT'
+    | 'ja-JP'
+    | 'ko-KR'
+    | 'pt-BR'
+    | 'th-TH'
+    | 'tr-TR'
+    | 'vi-VN'
+    | 'zh-Hant';
   user: User & {
     collection: 'users';
   };
