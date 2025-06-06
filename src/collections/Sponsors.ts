@@ -26,8 +26,8 @@ export const Sponsors: CollectionConfig = {
       validate: (val) => {
         const value = val as string
         if (!value) return 'Code is required'
-        if (!/^[a-z_]{1,50}$/.test(value)) {
-          return 'Only lowercase letters and underscores are allowed'
+        if (!/^[a-z0-9_]{1,50}$/.test(value)) {
+          return 'Only lowercase letters, numbers, and underscores are allowed'
         }
         return true
       },
