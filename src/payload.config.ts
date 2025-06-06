@@ -66,6 +66,25 @@ export default buildConfig({
   collections: [Pages, Posts, Sponsors, Media, Categories, Users],
   cors: [getServerSideURL()].filter(Boolean),
   globals: [Header, Footer],
+  i18n: {
+    defaultLocale: 'en-GB',
+    fallbackLocale: 'en-GB',
+    locales: [
+      'ar-SA',
+      'en-GB',
+      'es-ES',
+      'fr-FR',
+      'id-ID',
+      'it-IT',
+      'ja-JP',
+      'ko-KR',
+      'pt-BR',
+      'th-TH',
+      'tr-TR',
+      'vi-VN',
+      'zh-Hant',
+    ],
+  },
   plugins: [
     ...plugins,
     // storage-adapter-placeholder
