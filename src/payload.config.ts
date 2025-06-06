@@ -1,11 +1,10 @@
 // storage-adapter-import-placeholder
 import { mongooseAdapter } from '@payloadcms/db-mongodb'
-
-import sharp from 'sharp' // sharp-import
 import path from 'path'
 import { buildConfig, PayloadRequest } from 'payload'
+import sharp from 'sharp' // sharp-import
 import { fileURLToPath } from 'url'
-
+import { defaultLexical } from '@/fields/defaultLexical'
 import { Categories } from './collections/Categories'
 import { Media } from './collections/Media'
 import { Pages } from './collections/Pages'
@@ -15,7 +14,6 @@ import { Users } from './collections/Users'
 import { Footer } from './Footer/config'
 import { Header } from './Header/config'
 import { plugins } from './plugins'
-import { defaultLexical } from '@/fields/defaultLexical'
 import { getServerSideURL } from './utilities/getURL'
 
 const filename = fileURLToPath(import.meta.url)
@@ -66,24 +64,23 @@ export default buildConfig({
   collections: [Pages, Posts, Sponsors, Media, Categories, Users],
   cors: [getServerSideURL()].filter(Boolean),
   globals: [Header, Footer],
-  i18n: {
-    defaultLocale: 'en-GB',
-    fallbackLocale: 'en-GB',
+  localization: {
     locales: [
-      'ar-SA',
-      'en-GB',
-      'es-ES',
-      'fr-FR',
-      'id-ID',
-      'it-IT',
-      'ja-JP',
-      'ko-KR',
-      'pt-BR',
-      'th-TH',
-      'tr-TR',
-      'vi-VN',
-      'zh-Hant',
+      { code: 'ar-SA', label: 'Arabic (Saudi Arabia)', rtl: true },
+      { code: 'en-GB', label: 'English (UK)' },
+      { code: 'es-ES', label: 'Spanish (Spain)' },
+      { code: 'fr-FR', label: 'French (France)' },
+      { code: 'id-ID', label: 'Indonesian' },
+      { code: 'it-IT', label: 'Italian' },
+      { code: 'ja-JP', label: 'Japanese' },
+      { code: 'ko-KR', label: 'Korean' },
+      { code: 'pt-BR', label: 'Portuguese (Brazil)' },
+      { code: 'th-TH', label: 'Thai' },
+      { code: 'tr-TR', label: 'Turkish' },
+      { code: 'vi-VN', label: 'Vietnamese' },
+      { code: 'zh-Hant', label: 'Chinese (Traditional)' },
     ],
+    defaultLocale: 'en-GB',
   },
   plugins: [
     ...plugins,
