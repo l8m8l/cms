@@ -1,0 +1,7 @@
+{
+  "emptyLinesBetweenGroups": 0,
+  "groupRules": ["^node:", "^@(?!)/", {}, "^@/", "^[.](\\.|/.+)", "\\./"],
+  "hasSemicolon": false,
+  "trailingComma": "none",
+  "wrappingStyle": "prettier"
+}
